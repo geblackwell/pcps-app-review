@@ -303,7 +303,7 @@ const APPS_DATA = [
 ];
 
 // ── Google Sheets config ── paste your Apps Script URL here ──────────────
-const SHEET_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwAm-nOhXY95c86YDFLNUrRbpJRu-QoMjG1HamtEhRxNNEJo128SHXzP6S0AMlcqlM-Qw/exec';
 
 const COLORS = ['#dd6e42','#e8dab2','#4f6d7a','#c0d6df','#eaeaea'];
 const TEXT_DARK = ['#fff','#5a4a30','#fff','#1d3d47','#444'];
@@ -323,7 +323,7 @@ let filterMode = 'all';
 function persist(){ localStorage.setItem('pcps26_apps', JSON.stringify(apps)); }
 
 async function pushToSheets(appData) {
-  if(!SHEET_URL || SHEET_URL === 'YOUR_APPS_SCRIPT_URL_HERE') return;
+  if(!SHEET_URL || SHEET_URL === 'https://script.google.com/macros/s/AKfycbwAm-nOhXY95c86YDFLNUrRbpJRu-QoMjG1HamtEhRxNNEJo128SHXzP6S0AMlcqlM-Qw/exec') return;
   try {
     const payload = {
       action: 'save',
@@ -354,7 +354,7 @@ async function pushToSheets(appData) {
 async function loadFromSheets() {
   const overlay = document.getElementById('loadingOverlay');
   const msg = document.getElementById('loadingMsg');
-  if(!SHEET_URL || SHEET_URL === 'YOUR_APPS_SCRIPT_URL_HERE') {
+  if(!SHEET_URL || SHEET_URL === 'https://script.google.com/macros/s/AKfycbwAm-nOhXY95c86YDFLNUrRbpJRu-QoMjG1HamtEhRxNNEJo128SHXzP6S0AMlcqlM-Qw/exec') {
     overlay.style.display = 'none';
     render();
     return;
