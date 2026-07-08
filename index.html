@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2026/2027 PCPS Application Review</title
+<title>2026/2027 PCPS Application Review</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Arial,sans-serif;background:#f4f4f4;min-height:100vh}
@@ -870,7 +870,7 @@ function handleMention(textarea, listId) {
   } else {
     dropdown.innerHTML = matches.map(name => {
       const initials = name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2);
-      return '<div class="mention-item" onclick="insertMention(\''+name.replace(/'/g,"\\'")+'\')"><div class="avatar">'+initials+'</div>'+name+'</div>';
+      return '<div class="mention-item" onclick="insertMention(decodeURIComponent(\''+encodeURIComponent(name)+'\'))"><div class="avatar">'+initials+'</div>'+name+'</div>';
     }).join('');
   }
   dropdown.classList.add('open');
