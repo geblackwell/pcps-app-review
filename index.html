@@ -159,9 +159,6 @@ html,body{overflow-x:hidden;width:100%;min-width:0}
 </head>
 <body>
 
-<div id="notConnectedBanner" style="display:none;background:#fff3cd;color:#664d03;padding:10px 16px;font-size:13px;text-align:center;border-bottom:1.5px solid #ffecb5">
-  ⚠️ Google Sheets not connected. Open the HTML file in a text editor and replace <strong>https://script.google.com/a/macros/petersburg.k12.va.us/s/AKfycbxvCYdGLtnd2qt4w0-txldTlyrwwHw0BSTUI4lEdAj8SqshfmQUWbKovjosHbtXgTBe/exec</strong> with your Apps Script Web App URL.
-</div>
 <div id="loadingOverlay" style="position:fixed;inset:0;background:rgba(255,255,255,0.92);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px">
   <div style="width:44px;height:44px;border:4px solid #e0e0e0;border-top-color:#4f6d7a;border-radius:50%;animation:spin 0.8s linear infinite"></div>
   <div style="font-size:14px;color:#4f6d7a;font-weight:600" id="loadingMsg">Loading latest data…</div>
@@ -497,8 +494,7 @@ async function loadFromSheets() {
   const msg = document.getElementById('loadingMsg');
   if(!SHEET_URL || SHEET_URL === 'https://script.google.com/a/macros/petersburg.k12.va.us/s/AKfycbxvCYdGLtnd2qt4w0-txldTlyrwwHw0BSTUI4lEdAj8SqshfmQUWbKovjosHbtXgTBe/exec') {
     overlay.style.display = 'none';
-    const banner = document.getElementById('notConnectedBanner');
-    if(banner) banner.style.display = 'block';
+
     render();
     return;
   }
